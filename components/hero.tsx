@@ -28,14 +28,19 @@ export function Hero() {
       <div className="hero__content">
         <div className="container">
           <h1 className="hero__title" aria-label={HEADLINE}>
-            {HEADLINE.split("").map((ch, i) => (
-              <span
-                key={i}
-                className="ltr"
-                style={{ "--i": i } as React.CSSProperties}
-                aria-hidden="true"
-              >
-                {ch === " " ? "\u00A0" : ch}
+            {HEADLINE.split(" ").map((word, wordIndex) => (
+              <span className="hero__word" key={word}>
+                {word.split("").map((ch, letterIndex) => (
+                  <span
+                    key={`${word}-${letterIndex}`}
+                    className="ltr"
+                    style={{ "--i": wordIndex * 6 + letterIndex } as React.CSSProperties}
+                    aria-hidden="true"
+                  >
+                    {ch}
+                  </span>
+                ))}
+                {wordIndex < HEADLINE.split(" ").length - 1 ? "\u00A0" : ""}
               </span>
             ))}
           </h1>

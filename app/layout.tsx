@@ -18,6 +18,7 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
+import { MotionGraphics } from "@/components/motion-graphics";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -76,6 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <Navbar />
         <main id="main">{children}</main>
+        <MotionGraphics />
         <Footer />
         <WhatsAppFloat />
       </body>

@@ -2680,3 +2680,5 @@ h1,.h1{font-size:clamp(3rem,7vw,6.8rem);line-height:.98}
 /* Keep decorative photographs stable: no flashing or image swapping. */
 .motion-graphics__photo{animation:none;will-change:auto}
 .motion-graphics__photo img{backface-visibility:hidden;transform:translateZ(0)}
+/* Decorative photo cards removed from the animated layer to eliminate flashing during scroll. */
+.motion-graphics__photo{display:none!important}

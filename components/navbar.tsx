@@ -41,7 +41,7 @@ export function Navbar() {
   }
 
   return (
-    <header className={`navbar ${scrolled || open ? "navbar--scrolled" : ""}`}>
+    <header className={`navbar ftco-navbar-light ${scrolled || open ? "navbar--scrolled" : ""}`}>
       <div className="container navbar__inner">
         <Link href="/" className="navbar__logo" aria-label={`${SITE.name} home`}>
           <span className="navbar__logo-mark">

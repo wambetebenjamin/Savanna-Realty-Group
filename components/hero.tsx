@@ -1,6 +1,6 @@
 import { MapPin, ShieldCheck, TrendingUp } from "lucide-react";
 import { SmartImage } from "./smart-image";
-import { SearchBar } from "./search-bar";
+import { SearchForm } from "./search-form";
 import { HeroParticles } from "./hero-particles";
 
 const HEADLINE = "Find Your Place in Nairobi.";
@@ -12,7 +12,7 @@ const HEADLINE = "Find Your Place in Nairobi.";
  */
 export function Hero() {
   return (
-    <section className="hero">
+    <section className="hero hero-wrap ftco-degree-bg">
       <div className="hero__bg">
         <SmartImage
           name="hero-nairobi"
@@ -44,7 +44,7 @@ export function Hero() {
             developments across Nairobi. Viewings arranged within 48 hours,
             diaspora clients welcome.
           </p>
-          <SearchBar />
+          <SearchForm />
           <div className="hero__meta">
             <span>
               <ShieldCheck size={16} aria-hidden="true" />

@@ -9,13 +9,13 @@
    ============================================================ */
 
 :root {
-  --linen: #F7F4EF;          /* main background */
-  --sand: #EDE8DF;           /* secondary background */
-  --sage: #2D6A4F;           /* primary accent */
-  --terracotta: #D4845A;     /* secondary accent */
+  --linen: #F5F7FB;          /* main background */
+  --sand: #E8EDF6;           /* secondary background */
+  --sage: #243B64;           /* primary accent */
+  --terracotta: #E76F51;     /* secondary accent */
   --ink: #1A1A1A;            /* main text */
   --muted: #5C5C5C;          /* supporting text */
-  --border: rgba(45, 106, 79, 0.15); /* borders */
+  --border: rgba(36, 59, 100, 0.15); /* borders */
   --on-accent: #FFFFFF;      /* text over sage / dark photo overlays */
   --overlay: rgba(26, 26, 26, 0.6);
   --overlay-soft: rgba(26, 26, 26, 0.45);
@@ -1642,7 +1642,7 @@ h1, h2, h3, h4 {
 .field textarea:focus {
   outline: none;
   border-color: var(--sage);
-  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+  box-shadow: 0 0 0 3px rgba(36, 59, 100, 0.15);
 }
 
 .form--inline .field input,

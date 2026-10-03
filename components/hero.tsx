@@ -1,6 +1,6 @@
 import { MapPin, ShieldCheck, TrendingUp } from "lucide-react";
 import { SmartImage } from "./smart-image";
-import { SearchBar } from "./search-bar";
+import { SearchForm } from "./search-form";
 import { HeroParticles } from "./hero-particles";
 
 const HEADLINE = "Find Your Place in Nairobi.";
@@ -12,7 +12,7 @@ const HEADLINE = "Find Your Place in Nairobi.";
  */
 export function Hero() {
   return (
-    <section className="hero">
+    <section className="hero hero-wrap ftco-degree-bg">
       <div className="hero__bg">
         <SmartImage
           name="hero-nairobi"
@@ -28,14 +28,19 @@ export function Hero() {
       <div className="hero__content">
         <div className="container">
           <h1 className="hero__title" aria-label={HEADLINE}>
-            {HEADLINE.split("").map((ch, i) => (
-              <span
-                key={i}
-                className="ltr"
-                style={{ "--i": i } as React.CSSProperties}
-                aria-hidden="true"
-              >
-                {ch === " " ? "\u00A0" : ch}
+            {HEADLINE.split(" ").map((word, wordIndex) => (
+              <span className="hero__word" key={word}>
+                {word.split("").map((ch, letterIndex) => (
+                  <span
+                    key={`${word}-${letterIndex}`}
+                    className="ltr"
+                    style={{ "--i": wordIndex * 6 + letterIndex } as React.CSSProperties}
+                    aria-hidden="true"
+                  >
+                    {ch}
+                  </span>
+                ))}
+                {wordIndex < HEADLINE.split(" ").length - 1 ? "\u00A0" : ""}
               </span>
             ))}
           </h1>
@@ -44,7 +49,7 @@ export function Hero() {
             developments across Nairobi. Viewings arranged within 48 hours,
             diaspora clients welcome.
           </p>
-          <SearchBar />
+          <SearchForm />
           <div className="hero__meta">
             <span>
               <ShieldCheck size={16} aria-hidden="true" />

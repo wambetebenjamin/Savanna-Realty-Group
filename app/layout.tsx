@@ -6,10 +6,19 @@ import "@fontsource/plus-jakarta-sans/400.css";
 import "@fontsource/plus-jakarta-sans/500.css";
 import "@fontsource/plus-jakarta-sans/600.css";
 import "@fontsource/plus-jakarta-sans/700.css";
+import "@fontsource/nunito-sans/200.css";
+import "@fontsource/nunito-sans/300.css";
+import "@fontsource/nunito-sans/400.css";
+import "@fontsource/nunito-sans/500.css";
+import "@fontsource/nunito-sans/600.css";
+import "@fontsource/nunito-sans/700.css";
+import "@fontsource/nunito-sans/800.css";
+import "@fontsource/nunito-sans/900.css";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
+import { MotionGraphics } from "@/components/motion-graphics";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -35,7 +44,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#2D6A4F",
+  themeColor: "#243B64",
   width: "device-width",
   initialScale: 1,
 };
@@ -68,6 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <Navbar />
         <main id="main">{children}</main>
+        <MotionGraphics />
         <Footer />
         <WhatsAppFloat />
       </body>

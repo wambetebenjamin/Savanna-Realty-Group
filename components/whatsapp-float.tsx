@@ -2,7 +2,7 @@ import { SITE } from "@/lib/site";
 import { WhatsAppIcon } from "./whatsapp-icon";
 
 /**
- * Floating WhatsApp button, fixed bottom-right. Sage green background,
+ * Floating WhatsApp button, fixed bottom-right. Navy background,
  * white WhatsApp icon, hover tooltip, subtle scale pulse every 10 seconds
  * (pulse disabled for reduced motion via CSS).
  */

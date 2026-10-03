@@ -22,7 +22,6 @@ import { SmartImage } from "@/components/smart-image";
 import { Magnetic } from "@/components/magnetic";
 import { AGENTS } from "@/lib/agents";
 import { developments, featuredProperties } from "@/lib/properties";
-import { getPostMetas } from "@/lib/blog";
 import { SITE } from "@/lib/site";
 
 const STEPS = [
@@ -51,7 +50,6 @@ const STEPS = [
 export default function HomePage() {
   const featured = featuredProperties();
   const projects = developments();
-  const posts = getPostMetas().slice(0, 3);
 
   return (
     <>
@@ -216,44 +214,6 @@ export default function HomePage() {
             {AGENTS.map((agent, i) => (
               <Reveal key={agent.id} delay={i * 60}>
                 <AgentCard agent={agent} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* market insights */}
-      <section className="section" id="insights">
-        <div className="container">
-          <div className="section-head section-head--center">
-            <span className="eyebrow">Market Insights</span>
-            <h2 className="h2">Nairobi market intelligence</h2>
-          </div>
-          <div className="blog-cards">
-            {posts.map((post, i) => (
-              <Reveal key={post.slug} delay={i * 60}>
-                <article className="post-card">
-                  <Link href={`/blog/${post.slug}`} className="post-card__media">
-                    <SmartImage
-                      name={post.cover}
-                      alt={post.title}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  </Link>
-                  <div className="post-card__body">
-                    <span className="post-card__tag">{post.category}</span>
-                    <h3 className="post-card__title">
-                      <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-                    </h3>
-                    <p className="post-card__excerpt">{post.excerpt}</p>
-                    <div className="post-card__meta">
-                      <span>{post.author}</span>
-                      <span>{post.date}</span>
-                      <span>{post.readTime}</span>
-                    </div>
-                  </div>
-                </article>
               </Reveal>
             ))}
           </div>
